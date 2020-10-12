@@ -20,6 +20,9 @@
    ?>
 </header>
 <main>
+
+    <h1>Inscription</h1>
+    
 </main>
 <footer>
     <?php
