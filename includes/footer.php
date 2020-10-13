@@ -1,5 +1,5 @@
-<footer>
-<div class="container">
+<footer class="page-footer black">
+  <div class="container">
     <div class="row center">
         <img src="img/chat-logo1.png" alt="logo-sayhi" width="200px" height="200px">
     </div>
@@ -28,19 +28,17 @@
         <h5 class="white-text link-footer">REJOINS-NOUS</h5>
         <hr class="footer-border">
         <ul>
-          <!-- condition à ajouter 
-          <?php //if (isset($_SESSION['user']['id_user'])){
-                  //if ($_SESSION['user']['droits'] == 1) {
+          <?php if (isset($_SESSION['user']['id_user'])){
+                  if ($_SESSION['user']['droits'] == 1) {
           ?>
-          -->
             <li><a class="grey-text text-lighten-3" href="admin.php">espace admin</a></li>
-           <!-- <?php //} ?>  -->
+          <?php } ?>
             <li><a class="grey-text text-lighten-3 link-footer" href="profil.php">profil</a></li>
             <li><a class="grey-text text-lighten-3 link-footer" href="#!">déconnexion</a></li>
-          <!-- <?php// }else{ ?>  -->
+          <?php }else{ ?>
             <li><a class="grey-text text-lighten-3" href="connexion.php">connexion</a></li>
             <li><a class="grey-text text-lighten-3 link-footer" href="inscription.php">inscription</a></li>
-          <!-- <?php //} ?>-->
+          <?php } ?>
         </ul>
       </div>
     </div>
