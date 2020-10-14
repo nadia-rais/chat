@@ -42,7 +42,7 @@ Class User {
                 $nouveau_password = password_hash($password1,PASSWORD_DEFAULT);
                 $requete = $this->connect->prepare("INSERT INTO `utilisateurs`( `login`, `password`, `email`) VALUES (?,?,?)");
                 $requete->execute([$login,$nouveau_password,$mail]);
-                header('location: connexion.php');
+                header('location: ../connexion.php');
             }
 
             //si une erreur est rencontrée , on redirectionne avec le message en session
