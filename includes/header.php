@@ -1,6 +1,13 @@
 <?php //if (isset($_POST["deco"])) {
     //$user->disconnect();
     //}
+
+    require 'class/db.php';
+    require 'class/channel_class.php';
+
+    session_start();
+    $db = new DB();
+    $channel = new Channel($db);
 ?>
 <header>
     <nav class="transparent z-depth-0">
