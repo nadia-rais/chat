@@ -344,7 +344,7 @@ i.icon-black {
 .about_description{
   display: flex;
   flex-direction: column;
-  margin-top: 25%;
+  margin-top: 30%;
   width: 40%;
 }
 
