@@ -15,8 +15,27 @@ a{
 /*----------------------------------------------------*/
 /* INSCRIPTION
 ------------------------------------------------------ */
-
-
+.span_inscrip{
+  display: block;
+  color: grey;
+  text-align: left;
+}
+.erreur {
+  color: red;
+  font-weight: bold;
+  text-align: left;
+}
+.erreur_input {
+  border-bottom: 2px solid red !important;
+}
+.success {
+  border-bottom: 1px solid grey !important;
+}
+.success_verif{
+  color: green;
+  font-weight: bold;
+  text-align: left;
+}
 
 
 
