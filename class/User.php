@@ -57,6 +57,60 @@ Class User {
             
         }
     }
+
+
+    function User_connexion($password,$login){
+        $requete = $this->connect->prepare('SELECT * FROM `utilisateurs` WHERE login =  ?');
+        $requete->execute([$login]);
+        $resultat = $requete->fetchall();
+
+       
+        
+        if (count($resultat) == 0){
+            $_SESSION['erreur_log'] = "Le mot de passe ou login ne semble pas correct";
+            header('location: ../connexion.php');
+            
+           
+        }
+        elseif (password_verify( $password , $resultat[0]['password'] ) == false) {
+            $_SESSION['erreur_log'] = "Le mot de passe ou login ne semble pas correct";
+            header('location: ../connexion.php');
+            
+            
+        }
+        else {
+            $_SESSION['user']['user_id'] = $resultat[0]['id'];
+            $_SESSION['user']['login'] = $resultat[0]['login'];
+            $_SESSION['user']['mail'] = $resultat[0]['email'];
+            $_SESSION['user']['droits'] = $resultat[0]['droits'];
+
+            header('location: ../chat.php');
+           
+
+        }
+    }
+
+    function recuperationUser($login,$pass){
+        $requete = $this->connect->prepare('SELECT * FROM `utilisateurs` WHERE login =  ?');
+        $requete->execute([$login]);
+        $resultat = $requete->fetchall();
+
+        if( count($resultat) == 0){
+            echo "false";
+        }
+        elseif(password_verify($pass,$resultat[0]['password']) == false){
+            echo "false";
+        }
+        else {
+            
+            echo "true";
+        }
+       
+        
+    
+        
+        
+    }
 }
 
 

@@ -27,7 +27,7 @@ Class Connexion {
     }
 
     public function disconnect() {
-        $his->bdd->close();
+        $this->bdd->close();
     }
 }
 

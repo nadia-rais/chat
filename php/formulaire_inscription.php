@@ -1,5 +1,5 @@
 <?php
-session_start();
+// session_start();
 
 require '../class/Connexion.php';
 require '../class/User.php';

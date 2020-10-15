@@ -102,7 +102,7 @@ function OnBlurVerification(){
         console.log(valeur_input_mail)
         console.log(mail_verif.value)
         if (valeur_input_mail != mail_verif.value) {
-           erreur_mail_verif.textContent = "mail pas egale";
+           erreur_mail_verif.textContent = "Les adresses mail ne correspondent pas";
            erreur_mail_verif.classList.add('erreur');
            mail.classList.add('erreur_input');
            mail_verif.classList.add('erreur_input');
@@ -144,7 +144,7 @@ function OnBlurVerification2() {
          console.log(valeur_input_mail2)
          console.log(mail.value)
          if (valeur_input_mail2 != mail.value) {
-            erreur_mail_verif.textContent = "mail pas egale";
+            erreur_mail_verif.textContent = "Les adresses mail ne correspondent pas";
             erreur_mail_verif.classList.add('erreur');
             mail.classList.add('erreur_input');
             mail_verif.classList.add('erreur_input');
