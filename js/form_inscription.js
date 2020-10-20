@@ -141,26 +141,24 @@ function OnBlurVerification2() {
     }
 
     if (b_mail == true && b_mail2 == true) {
-         console.log(valeur_input_mail2)
-         console.log(mail.value)
-         if (valeur_input_mail2 != mail.value) {
+        console.log(valeur_input_mail2)
+        console.log(mail.value)
+        if (valeur_input_mail2 != mail.value) {
             erreur_mail_verif.textContent = "Les adresses mail ne correspondent pas";
             erreur_mail_verif.classList.add('erreur');
             mail.classList.add('erreur_input');
             mail_verif.classList.add('erreur_input');
             b_verif_mail = false;
              
-         }
-         else {
+        }
+        else {
              console.log('egale');
              erreur_mail_verif.textContent = "";
              erreur_mail_verif.classList.remove('erreur');
              mail.classList.remove('erreur_input');
              mail_verif.classList.remove('erreur_input');
              b_verif_mail = true;
-         }
-      
-
+        }
     }
 }
 
@@ -186,18 +184,8 @@ function OnKeyUpVerificationPassword(){
         else {
             gestion_success_password(verif_chiffre,password)
             b_password = true;
-        }
-
-        
-        if (expressionSpe.test(valeur_mdp) == false) {
-            gestion_success_password(verif_special,password)
-            b_password = true;
-        }else {
-            gestion_erreur_password(verif_special,password)
-            b_password = false;
-        }
-    }
-    
+        } 
+    }   
 }
 
 function OnOnKeyUpVerification_Password(){
@@ -265,8 +253,7 @@ var expressionReguliere = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)
 //regex Chiffre
 var expressionChiffre = new RegExp ("^(?=.*[0-9])");
 
-//regex caracteres spé
-var expressionSpe = /^[^@&".;:/%*§!+=°,}{[()!_$*€£`+=\/;?#]+$/;
+
 
 
 /*----------------------------------------------------*/
