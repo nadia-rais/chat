@@ -47,6 +47,10 @@ session_start();
 
                         <a href="login"><span class="white-text email"> vous êtes connecté @ <?= $_SESSION['user']['login']?></span></a></br>
                         <a href="profil.php">consulter mon profil</a>
+                        <?php if(isset ($_SESSION['user']) && ($_SESSION['user']['droits'] == 1)){ ?>
+                        </br>
+                        <a href="admin.php">retour au panel</a>
+                        <?php } ?>
                         
                     </div>
                 </li>
