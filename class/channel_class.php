@@ -5,9 +5,9 @@ class Channel{
 public $db;
 
 public function __construct($db)
-	{
+{
 	$this->db = $db;
-	}
+}
 
 // test méthode pour récupérer la liste des channel cf admin
 public function channel()
@@ -36,20 +36,19 @@ public function channel_infos($id_channel)
 public function chat_channel($id_chan, $id_chat)
     {
         $connexion = $this->db->connectDb();
-        $q1 = $connexion->prepare("SELECT * FROM canaux INNER JOIN messages ON canaux.id_channel = messages.id_channel ");
+        $q1 = $connexion->prepare("SELECT * FROM canaux INNER JOIN messages ON canaux.id = messages.id ");
         $q1->execute();
 		$chat_by_channel = $q1->fetchAll();
 
-		// pour afficher dans le html
-		/*foreach ($chat_by_channel as $chat_by_channels){
+		foreach ($chat_by_channel as $chat_by_channels){
 			$name_channel = $chat_by_channels['name_channel'];
 			$id_channel = $chat_by_channels["id_channel"];
 			$id_message = $chat_by_channels["id_messages"];
 			$content_message = $chat_by_channels["content"];
 			echo '<li><a href="channel.php?id='.$id_channel.'&channel_name='.$name_channel.'/messages">'.$name_channel.'</a></li>';
-		}*/
+		}
 
-		return $chat_channel;       
+		return chat_channel;       
 	}
 
 

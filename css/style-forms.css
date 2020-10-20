@@ -15,9 +15,35 @@ a{
 /*----------------------------------------------------*/
 /* INSCRIPTION
 ------------------------------------------------------ */
+.span_inscrip{
+  display: block;
+  color: white;
+  text-align: left;
+}
+.erreur {
+  color: red;
+  font-weight: bold;
+  text-align: left;
 
-
-
+}
+.erreur2{
+    color: red;
+    font-weight: bold;
+    text-align: left;
+    background-color: white;
+    border-radius: 15px;
+}
+.erreur_input {
+  border-bottom: 2px solid red !important;
+}
+.success {
+  border-bottom: 1px solid grey !important;
+}
+.success_verif{
+  color: green;
+  font-weight: bold;
+  text-align: left;
+}
 
 
 
@@ -26,47 +52,146 @@ a{
 /*----------------------------------------------------*/
 /* CONNEXION
 ------------------------------------------------------ */
+#erreur{
+  display: block;
+  width: 33%;
+  margin: 2% auto;
+  padding: 0%;
+  padding: 1%;
+  text-align: center;
+}
 
-
-
+.btn_valider_co{
+  background: linear-gradient(90deg, rgba(11,5,119,1) 0%, rgba(18,18,175,1) 44%, rgba(0,212,255,1) 100%);
+  border: 1px solid white;
+  padding: 1%;
+  width: 15%;
+  margin: auto;
+  color: white;
+}
 
 
 
 /*** RESPONSIVE CONNEXION ***/
 /*** - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ***/
+
+@media screen and (max-width: 426px) {
+  .btn_valider_co {
+    width:50%;
+  }
+}
+@media screen and (min-width: 427px) and (max-width: 769px) {
+  .btn_valider_co {
+    width:30%;
+  }
+}
 /*----------------------------------------------------*/
 /* PROFIL
 ------------------------------------------------------ */
+.main_form input, .main_form label {
+  color: white;
+}
+.section_profil {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  margin: auto;
+  
+}
+.section_profil img {
+  width: 15%;
+  margin: 1%;
+  border-radius: 50%;
+}
 
-
-
-
+.section_profil div {
+  width: 55%;
+}
+.h1_profil {
+  text-align: center;
+  font-family: 'Lato', sans-serif;
+  color: white;
+}
+.profil_p{
+  color: white;
+  font-size: 20px;
+}
+.span_p {
+  color: #BFE5E7;
+}
+.hr_profil {
+  width: 96%;
+  margin: 4% 0%;
+  background: rgb(11,5,119);
+  background: linear-gradient(90deg, rgba(11,5,119,1) 0%, rgba(18,18,175,1) 44%, rgba(0,212,255,1) 100%);
+  height: 7px;
+  border: none;
+}
+.btn_profil {
+  padding: 2%;
+  border: 1px solid white;
+  background-color: rgba(11,5,119,1);
+  color: white;
+}
+.btn_profil:hover{
+  color: black;
+  background: linear-gradient(90deg, rgba(11,5,119,1) 0%, rgba(18,18,175,1) 44%, rgba(0,212,255,1) 100%);
+}
+.profil_infos{
+  display: none;
+}
+.profil_password{
+  display: none;
+}
+.btn_valider_profil {
+  display: none;
+}
+.btn_valider{
+  background: linear-gradient(90deg, rgba(11,5,119,1) 0%, rgba(18,18,175,1) 44%, rgba(0,212,255,1) 100%);;
+  border: 1px solid white;
+  padding: 1%;
+  width: 20%;
+  margin: auto;
+  color: white;
+}
+#btn_annuler{
+  width: 5%;
+  padding: 1%;
+  background-color: red;
+  border: 1px solid white;
+  color: white;
+}
 
 
 /*** RESPONSIVE PROFIL ***/
 /*** - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ***/
 
+@media screen and (max-width: 426px){
+  .section_profil {
+    width: 100%;
+    flex-direction: column;
+    
+  }
+  .section_profil div {
+    width:100%;
+    padding: 1%;
+  }
+  .btn_profil {
+    display: block;
+    width: 50%;
+    margin: 2% auto;
+  }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  .btn_valider {
+    width: 30%;
+  }
+}
+@media screen and (min-width: 426px) and (max-width: 768px){
+  .section_profil {
+    justify-content: space-between;
+  }
+  .section_profil div {
+    width: 82%;
+  }
+}

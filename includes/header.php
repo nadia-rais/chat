@@ -1,11 +1,10 @@
-<?php //if (isset($_POST["deco"])) {
-    //$user->disconnect();
-    //}
+<?php 
 
     require 'class/db.php';
     require 'class/channel_class.php';
+   
 
-    session_start();
+    // session_start();
     $db = new DB();
     $channel = new Channel($db);
 
@@ -15,7 +14,8 @@
     }
 
     $title_channel = $channel->channel();
-    //var_dump($title_channel);
+
+
 ?>
 <header>
     <nav class="transparent z-depth-0">
@@ -33,17 +33,13 @@
             <?php
                 if(isset ($_SESSION['user']) && ($_SESSION['user']['droits'] == 1)){ ?>
                 <li><a href="admin.php"><ion-icon name="construct-outline"></ion-icon></a></li>
-                <li><form action="index.php" method="post">
-                    <input id="dropdown-deco" name="deco" value="DECONNEXION" type="submit"/>
-                    </form>
+                <li><a href="php/deconnexion.php">Déconnexion</a>
                 </li>
             <?php
                 }else if (isset($_SESSION['user']) && ($_SESSION['user']['droits'] == 0)){
             ?>
                 <li>bonjour @ <?= $_SESSION['user']['login'] ?></li>
-                <li><form action="index.php" method="post">
-                    <input id="dropdown-deco" name="deco" value="DECONNEXION" type="submit"/>
-                    </form>
+                <li><a href="php/deconnexion.php">Déconnexion</a>
                 </li>
             </ul>
             <?php } ?>
