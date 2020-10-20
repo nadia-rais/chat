@@ -15,11 +15,11 @@ $connexion->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
         echo "<tr id='chan".$id_channel."'>
                 <td>".$id_channel."</td>
-                <td id='name_channel'".$id_channel."'>".$name_channel."</td>
+                <td id='name_channel".$id_channel."'>".$name_channel."</td>
                 <td>
                     <form class='rename' action='' method='POST'>
-                        <input type='hidden' name='".$id_channel."' id='".$id_channel."' value='" .$id_channel."'>
-                        <input type='text' id='rename_channel'".$id_channel."' name='rename_channel' placeholder='renommer' size='30'>
+                        <input type='hidden' name='".$id_channel."' id='".$id_channel."' value='".$id_channel."'>
+                        <input type='text' id='rename_channel".$id_channel."' name='rename_channel' placeholder='renommer' size='30'>
                         <button type='submit' id='rename_button' name='rename' value='".$id_channel."'></button> 
                     </form>                           
                 </td>
