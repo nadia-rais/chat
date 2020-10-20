@@ -24,6 +24,7 @@
     $id_page = $_GET['id'];
     $last_mess = $channel->messages($id_page); // methode de la class channel pour récup tous les messages + channel + infos users 
     $chan_infos = $channel->channel_infos($id_page); // methode de la class channel pour récup tous les channel + messages associés
+    $id_user = ($_SESSION['user']['id_user']);
    ?>
     <nav>
         <div class="nav-wrapper chan-nav">
@@ -72,6 +73,7 @@
             <section class="user-input">
                 <form id="chat" action="" method="POST">
                     <input type="hidden" name="id_page" id="id_page" value="<?= $id_page ?>">
+                    <input type="hidden" name="id_user" id="id_user" value="<?= $id_user ?>">
                     <input type="text" name="content" id="content" placeholder="say-hi to your friends!" size="144" required>
                     <button id="send" type="submit" data-id_page="<?= $_GET['id'];?>" name="send"><i class="material-icons right button_send">near_me</i></button>
                 </form> 

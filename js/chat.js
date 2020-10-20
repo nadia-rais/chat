@@ -38,34 +38,38 @@ $(document).ready(function(){
 /* POST MESSAGES
 ------------------------------------------------------ */
 
-$('#chat').submit(function(e){
-    e.preventDefault(); // on empêche le bouton d'envoyer le formulaire
+$(document).ready(function(){
 
-    var id_user = 1;
-    var id_channel = $(this).find("input[name=id_page]").val();
-    var content = $(this).find("input[name=content]").val();
+    $('#chat').submit(function(e){
+        e.preventDefault(); // on empêche le bouton d'envoyer le formulaire
 
-    //alert(id_channel);
+        var id_user = $(this).find("input[name=id_user]").val();;
+        var id_channel = $(this).find("input[name=id_page]").val();
+        var content = $(this).find("input[name=content]").val();
 
-    $.ajax({
-        url : "php/send_messages.php", // on donne l'URL du fichier de traitement
-        type : "POST", // la requête est de type POST
-        data : ({id_utilisateur: id_user, id_channel: id_channel, content: content}),// et on envoie nos données
-        success:function(response){
-        //console.log(response); 
-        //alert(response);
+        //alert(id_channel);
+
+        $.ajax({
+            url : "php/send_messages.php", // on donne l'URL du fichier de traitement
+            type : "POST", // la requête est de type POST
+            data : ({id_utilisateur: id_user, id_channel: id_channel, content: content}),// et on envoie nos données
+            success:function(response){
+            //console.log(response); 
+            //alert(response);
             if (response != 'sent'){
                 $(".error").empty().append(response);
             }else{
-       
-                $("#chat")[0].reset(); 
-            
+   
+            $("#chat")[0].reset(); 
+        
             }
-        }
-    });
-  
-});
+            }
+        });
 
+    });
+
+
+});
 
 
 
