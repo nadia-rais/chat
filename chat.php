@@ -1,9 +1,7 @@
-<<<<<<< HEAD
 <?php
 session_start();
-var_dump($_SESSION);
-=======
-<?php $page_selected = 'chat'; ?>
+//var_dump($_SESSION);
+$page_selected = 'chat'; ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -70,4 +68,3 @@ var_dump($_SESSION);
 </footer>
 </body>
 </html>
->>>>>>> f83271f585e4acde0f0945fcad0fe8e4f7bb529e
