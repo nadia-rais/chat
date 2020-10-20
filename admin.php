@@ -1,4 +1,6 @@
-<?php $page_selected = 'admin'; ?>
+<?php $page_selected = 'admin'; 
+ session_start();
+?>
 
 <!DOCTYPE html>
 <html>
@@ -20,7 +22,6 @@
 <body>
 <header>
     <?php
-    session_start();
     include("includes/header.php");
 
     $list_users = $admin->all_users(); // class admin -> methode pour récupérer la liste des utilisateurs

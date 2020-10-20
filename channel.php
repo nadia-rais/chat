@@ -1,4 +1,6 @@
-<?php $page_selected = 'channel'; ?>
+<?php $page_selected = 'channel'; 
+session_start();
+?>
 
 <!DOCTYPE html>
 <html>
@@ -19,7 +21,6 @@
 <body>
 <header>
     <?php
-    session_start();
     include("includes/header.php");
     $id_page = $_GET['id'];
     $last_mess = $channel->messages($id_page); // methode de la class channel pour récup tous les messages + channel + infos users 

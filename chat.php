@@ -1,4 +1,6 @@
-<?php $page_selected = 'chat'; ?>
+<?php $page_selected = 'chat'; 
+ session_start();
+?>
 
 <!DOCTYPE html>
 <html>
@@ -20,7 +22,6 @@
 <body>
 <header>
     <?php
-    session_start();
     include("includes/header.php");
     $title_channel = $channel->channel();
     
