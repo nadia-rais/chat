@@ -14,8 +14,8 @@ $connexion->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
         $id_channel = $connexion->lastInsertId();
 
         echo "<tr id='chan'".$id_channel."'>
-                <td>'".$id_channel."'</td>
-                <td id='name_channel'".$id_channel."'>'".$name_channel."'</td>
+                <td>".$id_channel."</td>
+                <td id='name_channel'".$id_channel."'>".$name_channel."</td>
                 <td>
                     <form class='rename' action='' method='POST'>
                         <input type='hidden' name='".$id_channel."' id='".$id_channel."' value='" .$id_channel."'>
