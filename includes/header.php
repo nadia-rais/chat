@@ -39,7 +39,7 @@
             <?php
                 if(isset ($_SESSION['user']) && ($_SESSION['user']['droits'] == 1)){ ?>
                 <li><a href="admin.php"><ion-icon name="construct-outline"></ion-icon></a></li>
-                <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Channels<i class="material-icons right"></i></a></li>
+                <li><a href="chat.php">Chat</a></li>
                 <li><a href="php/deconnexion.php">Déconnexion</a>
                 </li>
             <?php
