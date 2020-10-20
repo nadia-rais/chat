@@ -11,7 +11,7 @@
             //alert(name_channel);
                         
                 $.ajax({
-                    url : "traitement_php/rename_chan.php", // on donne l'URL du fichier de traitement
+                    url : "php/rename_chan.php", // on donne l'URL du fichier de traitement
                     type : "POST", // la requête est de type POST
                     data : ({id_channel: id_channel, name_channel: name_channel}),// et on envoie nos données
                     success:function(response){
@@ -38,7 +38,7 @@ $(document).ready(function(){
         //alert(id_channel);
                     
             $.ajax({
-                url : "traitement_php/delete_channel.php", // on donne l'URL du fichier de traitement
+                url : "php/delete_channel.php", // on donne l'URL du fichier de traitement
                 type : "POST", // la requête est de type POST
                 data : ({id_channel: id_channel}),// et on envoie nos données
                 success:function(response){
@@ -64,7 +64,7 @@ $(document).ready(function(){
         //alert(id_channel);
                     
             $.ajax({
-                url : "traitement_php/new_channel.php", // on donne l'URL du fichier de traitement
+                url : "php/new_channel.php", // on donne l'URL du fichier de traitement
                 type : "POST", // la requête est de type POST
                 data : ({name_channel: name_channel}),// et on envoie nos données
                 success:function(response){
@@ -89,7 +89,7 @@ $(document).ready(function(){
         //alert(id);
                     
             $.ajax({
-                url : "traitement_php/update_user.php", // on donne l'URL du fichier de traitement
+                url : "php/update_user.php", // on donne l'URL du fichier de traitement
                 type : "POST", // la requête est de type POST
                 data : ({id:id, droits:droits}),// et on envoie nos données
                 success:function(response){
@@ -120,7 +120,7 @@ $(document).ready(function(){
         //alert(id_channel);
                     
             $.ajax({
-                url : "traitement_php/delete_user.php", // on donne l'URL du fichier de traitement
+                url : "php/delete_user.php", // on donne l'URL du fichier de traitement
                 type : "POST", // la requête est de type POST
                 data : ({id: id}),// et on envoie nos données
                 success:function(response){

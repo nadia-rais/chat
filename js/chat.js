@@ -12,7 +12,7 @@ $(document).ready(function(){
             //alert(last_id);
    
             $.ajax({
-                url : "traitement_php/reload.php", // on donne l'URL du fichier de traitement
+                url : "php/reload.php", // on donne l'URL du fichier de traitement
                 type : "GET", // la requête est de type GET
                 data : ({id_channel: id_channel, id_messages: last_id}),// et on envoie nos données
                 success:function(response){
@@ -48,7 +48,7 @@ $('#chat').submit(function(e){
     //alert(id_channel);
 
     $.ajax({
-        url : "traitement_php/send_messages.php", // on donne l'URL du fichier de traitement
+        url : "php/send_messages.php", // on donne l'URL du fichier de traitement
         type : "POST", // la requête est de type POST
         data : ({id_utilisateur: id_user, id_channel: id_channel, content: content}),// et on envoie nos données
         success:function(response){
