@@ -41,27 +41,10 @@ i.icon-black {
 
 @media (max-width: 380px){
   #header-logo{
-    position: absolute;
+    position: absolute !important;
     margin-left: 80% !important;
   }
 }
-
-/*----------------------------------------------------*/
-/* HEADER
------------------------------------------------------- */
-header{
-  z-index: 100;
-}
-.brand-logo{
-  letter-spacing: 1px;
-  font-family: 'Lato', sans-serif;
-  z-index: 100;
-}
-i.icon-black {
-  color: black;
-  z-index: 100;
-}
-
 
 /*** RESPONSIVE HEADER ***/
 /*** - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ***/

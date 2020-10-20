@@ -26,7 +26,7 @@
     </ul>
     <nav class="transparent z-depth-0">
         <div class="nav-wrapper lighten-5 ">
-            <img src="img/chat-logo1.png" alt="logo-sayhi" width="60px" height="60px" style="margin-top:10px; margin-left:10px; margin-right:10px">
+            <img id="header-logo" src="img/chat-logo1.png" alt="logo-sayhi" width="60px" height="60px" style="margin-top:10px; margin-left:10px; margin-right:10px">
             <a href="index.php" class="brand-logo white-text">say Hi !</a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons icon-black">menu</i></a>
             <ul class="right hide-on-med-and-down">
