@@ -1,4 +1,6 @@
-<?php $page_selected = 'index'; ?>
+<?php $page_selected = 'index'; 
+session_start();
+?>
 
 <!DOCTYPE html>
 <html>
