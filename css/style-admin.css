@@ -15,17 +15,234 @@ a{
 /*----------------------------------------------------*/
 /* ADMIN
 ------------------------------------------------------ */
+.chan-nav{
+  background-image: linear-gradient(to right, #84fab0 0%, #8fd3f4 51%, #84fab0 100%) !important;
+}
+
+.pg_section {
+  height: 100vh;
+  width:100%;
+  overflow: scroll;
+}
+
+.pg_section_title{
+  display: flex;
+  background: linear-gradient(90deg, rgba(11,5,119,1) 0%, rgba(18,18,175,1) 44%, rgba(0,212,255,1) 100%);
+  width:100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  justify-content: center;
+  align-items: center;
+  color: #84fab0;
+  letter-spacing: 2px;
+}
+
+.table_channel{
+  width: 90%;
+  height: 200px;
+  overflow: scroll;
+  scroll-behavior: smooth;
+  margin-left: 5%;
+  margin-top: 5%;
+  border: blueviolet 1px solid;
+}
+
+#channels{
+  display: flex;
+  flex-direction: column;
+  height: 85vh;
+  width: 90%;
+  margin-left: 5%;
+  background: rgba(241, 245, 250, 0.5);
+  overflow: scroll;
+}
+.delete_form{
+  margin-left: 10%;
+}
+
+.deletebutton{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: none;
+  background-image: url(background/delete1.png);
+  background-size: cover;
+  color: transparent;
+}
+
+.rename{
+  display: flex;
+  align-items: center;
+  width: 90%;
+}
+
+#rename_button{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border:none;
+  background-image: url(background/arrow\ icon\ gray.png);
+  background-size: cover;
+}
+
+.rename input[type=text]{
+  display: flex !important;
+  width: 80%;
+  align-items: center !important;
+  border: 0.5px solid gainsboro !important;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  padding-left: 10px;
+  margin-right: 2.5%;
+}
+
+#users{
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin-left: 5%;
+  background: rgba(241, 245, 250, 0.5);
+}
+
+#submit_status{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border:none;
+  background-image: url(background/arrow\ icon\ gray.png);
+  background-size: cover;
+}
+
+.user{
+  display: flex;
+  align-items: center;
+}
+
+.user input[type=text]{
+  display: flex !important;
+  width: 30%;
+  align-items: center !important;
+  border: 0.5px solid gainsboro !important;
+  color: #B1C2BE !important;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  padding-left: 10px;
+  margin-right: 5%;
+}
 
 
-
-
-
-
-/*** RESPONSIVE ADMIN ***/
 /*** - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ***/
+/*** RESPONSIVE ADMIN ***/
+@media (max-width: 680px) {
+  .title_panel{
+    width:70%;
+    font-size: 20px !important;
+  }
+  .table_channel th{
+    font-size: 11px !important;
+  }
+  .table_channel td{
+    font-size: 11px !important;
+  }
+  .rename input[type=text]{
+    font-size: 11px !important;
+    padding-left: 5px;
+    width: 50%;
+    margin-right: 0;
+  }
+  #rename_button{
+    width: 20px;
+    height: 20px;
+    margin-left: 10%;
+  }
+
+  #submit_status{
+    width: 20px;
+    height: 20px;
+  }
+  .deletebutton{
+    width: 20px;
+    height: 20px;
+    margin-left: 15%;
+  }
+
+  .nav_admin{
+    display: none;
+    visibility: hidden;
+  }
+
+  .user{
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .user input[type=text]{
+    width: 10%;
+  }
+ 
+}
+
+/*----------------------------------------------------*/
+/* FORM CREATE
+------------------------------------------------------ */
+
+#create_chan{
+  display: flex;
+  width: 90%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  align-items: center;
+  justify-content: space-around;
+  background-color: white;
+  position: fixed;
+  position: absolute;
+  bottom: 0;
+}
+
+#create_chan label{
+  color: black;
+  font-size: 16px;
+  text-transform: uppercase;
+  border-bottom: black 0.5px solid;
+}
+
+#create_chan input[type=text]{
+  display: flex !important;
+  width: 40%;
+  align-items: center !important;
+  border: 0.5px solid gainsboro !important;
+  color: #B1C2BE !important;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  padding-left:10px;
+  margin-left: 11.5%;
+}
 
 
+/*** - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ***/
+/*** RESPONSIVE ADMIN ***/
+@media (max-width: 680px) {
+  #create_chan{
+    flex-direction: column;
+    padding-bottom: 30px !important;
+    height: 37.5vh;
+  }
 
+  #create_chan input[type=text]{
+    display: flex !important;
+    width: 90%;
+    height: 50px !important;
+    align-items: center !important;
+    font-size: 11px !important;
+    padding:1px;
+    margin-left: 2%;
+  }
+
+  #create_chan label{
+    margin-bottom: 10px;
+  }
+  
+}
 
 
 
