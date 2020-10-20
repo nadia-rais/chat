@@ -13,7 +13,7 @@ $connexion->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
         $q->execute();
         $id_channel = $connexion->lastInsertId();
 
-        echo "<tr id='chan'".$id_channel."'>
+        echo "<tr id='chan".$id_channel."'>
                 <td>".$id_channel."</td>
                 <td id='name_channel'".$id_channel."'>".$name_channel."</td>
                 <td>
