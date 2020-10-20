@@ -28,7 +28,7 @@
                 if(empty($_SESSION['user'])){
             ?>
                 <li><a href="connexion.php"><i class="material-icons right">account_circle</i></a></li>
-                <li><a class="waves-effect waves-red btn black">SIGN UP</a></li>
+                <li><a href="inscription.php" class="waves-effect waves-red btn black">SIGN UP</a></li>
             <?php } ?>
             <?php
                 if(isset ($_SESSION['user']) && ($_SESSION['user']['droits'] == 1)){ ?>
