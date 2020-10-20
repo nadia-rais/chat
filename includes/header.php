@@ -8,6 +8,14 @@
     session_start();
     $db = new DB();
     $channel = new Channel($db);
+
+    if ($page_selected = 'admin'){
+        require 'class/admin_class.php';
+        $admin = new Admin($db);
+    }
+
+    $title_channel = $channel->channel();
+    //var_dump($title_channel);
 ?>
 <header>
     <nav class="transparent z-depth-0">
