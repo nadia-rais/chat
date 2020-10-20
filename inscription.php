@@ -18,7 +18,6 @@ $page_selected = 'inscription'; ?>
     <script src="js/script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="js/form_inscription.js"></script>
-    
 </head>
 <body>
 <header>
