@@ -1,29 +1,30 @@
 /*----------------------------------------------------*/
 /* RENAME CHANNEL
 ------------------------------------------------------ */
-    $(document).ready(function(){
+$(document).ready(function(){
 
-        $('.rename').submit(function(e){
-            e.preventDefault(); // on empêche le bouton d'envoyer le formulaire
-                
-            var id_channel = $(this).find("input[name=id_channel]").val();
-            var name_channel = $(this).find("input[name=rename_channel]").val();
-            //alert(name_channel);
-                        
-                $.ajax({
-                    url : "php/rename_chan.php", // on donne l'URL du fichier de traitement
-                    type : "POST", // la requête est de type POST
-                    data : ({id_channel: id_channel, name_channel: name_channel}),// et on envoie nos données
-                    success:function(response){
-                        console.log(response);
-                        //alert(response);
+    $('.rename').submit(function(e){
+        e.preventDefault(); // on empêche le bouton d'envoyer le formulaire
+            
+        var id_channel = $(this).find("input[name=id_channel]").val();
+        var name_channel = $(this).find("input[name=rename_channel]").val();
+        //alert(name_channel);
+                    
+            $.ajax({
+                url : "php/rename_chan.php", // on donne l'URL du fichier de traitement
+                type : "POST", // la requête est de type POST
+                data : ({id_channel: id_channel, name_channel: name_channel}),// et on envoie nos données
+                success:function(response){
+                    console.log(response);
+                    //alert(response);
 
-                        $("#name_channel" + id_channel).html(response); 
-                        $("#rename_channel" + id_channel).html(response); 
-                        
-                    }
-                });
-        });
+                    $("#name_channel" + id_channel).html(response); 
+                    $("#rename_channel" + id_channel).html(response); 
+                    $(".rename")[0].reset(); 
+                    
+                }
+            });
+    });
 });
 
 /*----------------------------------------------------*/
@@ -70,7 +71,8 @@ $(document).ready(function(){
                 success:function(response){
                     
                     //alert(response);
-                    $('.table_channel tbody').append(response);
+                    $('.channel_tab .channel_body').append(response);
+                    $("#create_chan")[0].reset(); 
                 }
             });
     });
