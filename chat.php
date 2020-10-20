@@ -1,9 +1,5 @@
-<<<<<<< HEAD
-<?php
-session_start();
-var_dump($_SESSION);
-=======
 <?php $page_selected = 'chat'; ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,6 +9,7 @@ var_dump($_SESSION);
     <link rel="shortcut icon" type="image/x-icon" href="#">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/style-chat.css">
     <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="js/script.js"></script>
@@ -23,46 +20,61 @@ var_dump($_SESSION);
 <body>
 <header>
     <?php
+    session_start();
     include("includes/header.php");
     $title_channel = $channel->channel();
+    
     //var_dump($title_channel);
-    $list_messages = $channel->messages(1);
-    //var_dump($list_messages);
    ?>
+   <nav>
+        <div class="nav-wrapper chan-nav">
+            <p class="brand-logo center chat-logo">BIENVENUE @ <?= $_SESSION['user']['login']; ?></p>
+        </div>
+    </nav>
 </header>
-<main>
-    <!-- Page Layout here -->
-    <div class="row">
+<main data-id_page="<?= $id_page;?>" id="main-channel">
+    <?php if(isset ($_SESSION['user'])){ ?>
+    <div class="row row-chat">
         <!-- Lateral nav pour afficher les infos de l'utilisateur connecté + la liste des channels -->
-        <div class="col s3 teal lighten-2">
+        <div class="col l3 s12 profile-side">
             <ul>
                 <li>
                     <div class="user-view">
-                        <div class="background center">
+                        <div class="background center user-pic">
                             <a href="#user_picture"><img class="circle" src="img/default_profile.png" width="70"></a>
                         </div>
-                        <a href="#user_name"><span class="white-text name">John Doe</span></a>
-                        <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
+
+                        <a href="login" class="center-align"><span class="white-text email"> vous êtes connecté @ <?= $_SESSION['user']['login']?></span></a></br>
+                        <a href="profil.php">consulter mon profil</a>
+                        
                     </div>
                 </li>
-                <li><a href="#!"><i class="material-icons">cloud</i>CHANNELS</a></li>
-                <?php  var_dump($title_channel); ?>
-                <li><a href="#!">Second Link</a></li>
+                
+                <li id="title-category"> # CHANNELS</li>
                 <li><div class="divider"></div></li>
-                <li><a class="subheader">Subheader</a></li>
-                <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+                <div class="collection">
+                    <?php foreach ($title_channel as $channels){ ?>
+                        <a class="collection-item transparent" href="channel.php?id=<?= $channels['id_channel'] ?>"># <?= $channels['name_channel'] ?></a>
+                    <?php }; ?>
+                </div>
+                <li><div class="divider"></div></li>
             </ul>
         </div>
 
-        <div class="col s9">
+        <div class="col l9 s12">
             <!-- AFFICHAGE DES MESSAGES + FORM POUR POSTER  -->
-            <form id="chat" action="traitement_php/message.php" method="POST">
-                <input type="text" name="message" placeholder="say-hi!" size="144" required>
-                <button type="submit"><i class="material-icons right">near_me</i></button>
-            </form>
+            <section id="messages-chat">
+                <h1 id="title-chat">rejoins un channel et discute avec tes proches dès maintenant ...</h1>
+            </section>
         </div>
-
     </div>
+    <?php } else {?>
+        <div class="container">
+            <div class="row">
+                <p class="center-align white-text" >connectez vous pour accèder à cette cette page </p>
+            </div>
+        </div>
+    <?php }; ?>
 </main>
 <footer>
     <?php
@@ -70,4 +82,3 @@ var_dump($_SESSION);
 </footer>
 </body>
 </html>
->>>>>>> f83271f585e4acde0f0945fcad0fe8e4f7bb529e
