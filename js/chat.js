@@ -39,7 +39,6 @@ $(document).ready(function(){
 ------------------------------------------------------ */
 
 $(document).ready(function(){
-
     $('#chat').submit(function(e){
         e.preventDefault(); // on empêche le bouton d'envoyer le formulaire
 
@@ -47,6 +46,7 @@ $(document).ready(function(){
         var id_channel = $(this).find("input[name=id_page]").val();
         var content = $(this).find("input[name=content]").val();
 
+        //console.log(id_user); 
         //alert(id_channel);
 
         $.ajax({
@@ -56,19 +56,15 @@ $(document).ready(function(){
             success:function(response){
             //console.log(response); 
             //alert(response);
-            if (response != 'sent'){
+                if (response != 'sent'){
                 $(".error").empty().append(response);
-            }else{
-   
-            $("#chat")[0].reset(); 
-        
-            }
+                }else{
+                    $("#chat")[0].reset(); 
+                 }
             }
         });
 
     });
-
-
 });
 
 
