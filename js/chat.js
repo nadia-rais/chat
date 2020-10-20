@@ -29,7 +29,7 @@ $(document).ready(function(){
             });
 
               charger(); 
-        }, 1000);
+        }, 3000);
     }charger();
 
 });
