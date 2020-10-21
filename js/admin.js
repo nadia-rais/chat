@@ -20,7 +20,7 @@ $(document).ready(function(){
 
                     $("#name_channel" + id_channel).html(response); 
                     $("#rename_channel" + id_channel).html(response); 
-                    $(".rename")[0].reset(); 
+                    document.getElementById('rename_channel' + id_channel).value = '';
                     
                 }
             });
