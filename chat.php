@@ -1,4 +1,6 @@
-<?php $page_selected = 'chat'; ?>
+<?php $page_selected = 'chat'; 
+ session_start();
+?>
 
 <!DOCTYPE html>
 <html>
@@ -20,7 +22,6 @@
 <body>
 <header>
     <?php
-    session_start();
     include("includes/header.php");
     $title_channel = $channel->channel();
     
@@ -46,6 +47,10 @@
 
                         <a href="login" class="center-align"><span class="white-text email"> vous êtes connecté @ <?= $_SESSION['user']['login']?></span></a></br>
                         <a href="profil.php">consulter mon profil</a>
+                        <?php if(isset ($_SESSION['user']) && ($_SESSION['user']['droits'] == 1)){ ?>
+                        </br>
+                        <a href="admin.php">retour au panel</a>
+                        <?php } ?>
                         
                     </div>
                 </li>

@@ -14,6 +14,7 @@ session_start();
     <link rel="stylesheet" type="text/css" href="css/style-chat.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/chat.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
@@ -21,11 +22,11 @@ session_start();
 <body>
 <header>
     <?php
-    //session_start();
     include("includes/header.php");
     $id_page = $_GET['id'];
     $last_mess = $channel->messages($id_page); // methode de la class channel pour récup tous les messages + channel + infos users 
     $chan_infos = $channel->channel_infos($id_page); // methode de la class channel pour récup tous les channel + messages associés
+    $id_user = ($_SESSION['user']['id_user']);
    ?>
     <nav>
         <div class="nav-wrapper chan-nav">
@@ -47,6 +48,10 @@ session_start();
 
                         <a href="login"><span class="white-text email"> vous êtes connecté @ <?= $_SESSION['user']['login']?></span></a></br>
                         <a href="profil.php">consulter mon profil</a>
+                        <?php if(isset ($_SESSION['user']) && ($_SESSION['user']['droits'] == 1)){ ?>
+                        </br>
+                        <a href="admin.php">retour au panel</a>
+                        <?php } ?>
                         
                     </div>
                 </li>
@@ -74,6 +79,7 @@ session_start();
             <section class="user-input">
                 <form id="chat" action="" method="POST">
                     <input type="hidden" name="id_page" id="id_page" value="<?= $id_page ?>">
+                    <input type="hidden" name="id_user" id="id_user" value="<?= $id_user ?>">
                     <input type="text" name="content" id="content" placeholder="say-hi to your friends!" size="144" required>
                     <button id="send" type="submit" data-id_page="<?= $_GET['id'];?>" name="send"><i class="material-icons right button_send">near_me</i></button>
                 </form> 
@@ -88,7 +94,6 @@ session_start();
             </div>
         </div>
     <?php }; ?>
-    <script type="text/javascript" src="js/chat.js"></script>
 </main>
 <footer>
     <?php

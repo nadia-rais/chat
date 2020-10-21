@@ -1,4 +1,6 @@
-<?php $page_selected = 'admin'; ?>
+<?php $page_selected = 'admin'; 
+ session_start();
+?>
 
 <!DOCTYPE html>
 <html>
@@ -20,7 +22,6 @@
 <body>
 <header>
     <?php
-    session_start();
     include("includes/header.php");
 
     $list_users = $admin->all_users(); // class admin -> methode pour récupérer la liste des utilisateurs
@@ -40,9 +41,9 @@
 </header>
 <main> 
     <?php if(isset ($_SESSION['user']) && ($_SESSION['user']['droits'] == 1)){ ?>
-    <section class="pg_section" id="channels" >
+        <section class="pg_section" id="channels" >
         <p class="pg_section_title">#CHANNELS</p>
-        <table class="striped table_channel">
+        <table class="striped table_channel channel_tab">
 			<thead>
 			    <tr>
                     <th>id</td>
@@ -51,7 +52,7 @@
                     <th>supprimer</td> 
 			    </tr>
             </thead>
-            <tbody>
+            <tbody class="channel_body">
                 <?php foreach ($list_channels as $channel){
                 $id_channel = $channel['id_channel'];
                 $name_channel = $channel['name_channel'];
@@ -62,7 +63,7 @@
                     <td>
                         <form class="rename" action="" method="POST">
                             <input type="hidden" name="id_channel" id="id_channel" value="<?= $id_channel ?>">
-                            <input type="text" id="rename_channel<?php echo $id_channel;?>" name="rename_channel" placeholder="renommer">
+                            <input type="text" id="rename_channel<?php echo $id_channel;?>" name="rename_channel" placeholder="renommer" size="30">
                             <button type="submit" id="rename_button" name="rename" value='<?= $id_channel ?>'></button> 
                         </form>                           
                     </td>
@@ -107,7 +108,7 @@
                     <td>
                         <form class="user" action="" method="POST">
                             <input type="hidden" name="id_user" id="id_user" value="<?= $id_user ?>"/>
-                            <input type="text" id="change_status" name="change_status" placeholder="statut" size="10"/>
+                            <input type="text" id="change_status<?= $id_user;?>" name="change_status" placeholder="statut" size="10"/>
                             <button type="submit" id="submit_status" name="submit_status" value='<?= $id_user ?>'></button>
                         </form>
                     </td>
@@ -118,16 +119,9 @@
                     </td>  
                 </tr>
                 <?php };?>
-                <script src="js/admin.js"></script>
             </tbody>
         </table>
     </section>
-    <?php }else{?>
-        <div class="container">
-            <div class="row">
-                <p class="center-align white-text" >vous n'avez pas accès à cette page </p>
-            </div>
-        </div>
     <?php }; ?>
 </main>
 <footer>
