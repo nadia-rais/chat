@@ -108,7 +108,7 @@
                     <td>
                         <form class="user" action="" method="POST">
                             <input type="hidden" name="id_user" id="id_user" value="<?= $id_user ?>"/>
-                            <input type="text" id="change_status" name="change_status" placeholder="statut" size="10"/>
+                            <input type="text" id="change_status<?= $id_user;?>" name="change_status" placeholder="statut" size="10"/>
                             <button type="submit" id="submit_status" name="submit_status" value='<?= $id_user ?>'></button>
                         </form>
                     </td>

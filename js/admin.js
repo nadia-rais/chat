@@ -102,7 +102,7 @@ $(document).ready(function(){
                    
                     
                     $("#status" + id).html(response);
-                    $("#change_status" +id).empty(); 
+                    document.getElementById('change_status'+ id).value = '';
 
                     }
             });
