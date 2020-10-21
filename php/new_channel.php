@@ -13,12 +13,18 @@ $connexion->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
         $q->execute();
         $id_channel = $connexion->lastInsertId();
         $content = 'nouveau-channel';
+        $content1 = 'bienvenue à toutes et tous';
 
         // requete après la création du channel pour insérer un message automatique dans le channel et pouvoir lancer le rechargement
         $q2 = $connexion->prepare ("INSERT INTO messages (id_utilisateur, id_channel, content, created_in) VALUES (1,:id_channel,:content,NOW())");
         $q2->bindParam(':id_channel', $id_channel, PDO::PARAM_INT);
         $q2->bindParam(':content', $content, PDO::PARAM_STR);
         $q2->execute();
+
+        $q3 = $connexion->prepare ("INSERT INTO messages (id_utilisateur, id_channel, content, created_in) VALUES (1,:id_channel,:content,NOW())");
+        $q3->bindParam(':id_channel', $id_channel, PDO::PARAM_INT);
+        $q3->bindParam(':content', $content1, PDO::PARAM_STR);
+        $q3->execute();
 
         echo "<tr id='chan".$id_channel."'>
                 <td>".$id_channel."</td>
