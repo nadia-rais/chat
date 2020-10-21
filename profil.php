@@ -1,4 +1,4 @@
-<?php  require 'php/traitement_profil.php'; ?>
+<?php  require 'php/traitement_profil.php';?>
 
 <!DOCTYPE html>
 <html>

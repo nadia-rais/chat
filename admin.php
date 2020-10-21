@@ -20,11 +20,13 @@
 <body>
 <header>
     <?php
+    session_start();
     include("includes/header.php");
 
     $list_users = $admin->all_users(); // class admin -> methode pour récupérer la liste des utilisateurs
     $list_channels = $channel->channel(); // class channel -> methode pour récupérer la liste des channels
    ?>
+   <?php if(isset ($_SESSION['user']) && ($_SESSION['user']['droits'] == 1)){ ?>
    <nav>
         <div class="nav-wrapper chan-nav">
             <p class="brand-logo center title_panel">PANEL ADMIN</p>
@@ -34,8 +36,10 @@
             </ul>
         </div>
     </nav>
+   <?php } ?>
 </header>
 <main> 
+    <?php if(isset ($_SESSION['user']) && ($_SESSION['user']['droits'] == 1)){ ?>
     <section class="pg_section" id="channels" >
         <p class="pg_section_title">#CHANNELS</p>
         <table class="striped table_channel">
@@ -58,7 +62,7 @@
                     <td>
                         <form class="rename" action="" method="POST">
                             <input type="hidden" name="id_channel" id="id_channel" value="<?= $id_channel ?>">
-                            <input type="text" id="rename_channel<?php echo $id_channel;?>" name="rename_channel" placeholder="renommer" size="30">
+                            <input type="text" id="rename_channel<?php echo $id_channel;?>" name="rename_channel" placeholder="renommer">
                             <button type="submit" id="rename_button" name="rename" value='<?= $id_channel ?>'></button> 
                         </form>                           
                     </td>
@@ -118,6 +122,13 @@
             </tbody>
         </table>
     </section>
+    <?php }else{?>
+        <div class="container">
+            <div class="row">
+                <p class="center-align white-text" >vous n'avez pas accès à cette page </p>
+            </div>
+        </div>
+    <?php }; ?>
 </main>
 <footer>
     <?php

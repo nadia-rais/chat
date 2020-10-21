@@ -39,12 +39,8 @@ a{
 
 .table_channel{
   width: 90%;
-  height: 200px;
-  overflow: scroll;
-  scroll-behavior: smooth;
   margin-left: 5%;
   margin-top: 5%;
-  border: blueviolet 1px solid;
 }
 
 #channels{
@@ -72,6 +68,7 @@ a{
 
 .rename{
   display: flex;
+  justify-content: space-between;
   align-items: center;
   width: 90%;
 }
@@ -87,13 +84,12 @@ a{
 
 .rename input[type=text]{
   display: flex !important;
-  width: 80%;
   align-items: center !important;
   border: 0.5px solid gainsboro !important;
   font-size: 16px !important;
   font-weight: 400 !important;
-  padding-left: 10px;
-  margin-right: 2.5%;
+  padding-left: 10px!important;
+  width:70% !important;
 }
 
 #users{
@@ -116,17 +112,19 @@ a{
 .user{
   display: flex;
   align-items: center;
+  width:60%;
+  justify-content:space-between;
 }
 
 .user input[type=text]{
   display: flex !important;
-  width: 30%;
+  width: 40% !important;
   align-items: center !important;
   border: 0.5px solid gainsboro !important;
   color: #B1C2BE !important;
   font-size: 16px !important;
   font-weight: 400 !important;
-  padding-left: 10px;
+  padding-left: 10px !important;
   margin-right: 5%;
 }
 
@@ -182,6 +180,14 @@ a{
  
 }
 
+@media(max-width: 380px){
+  
+  .rename input[type=text]{
+    width:30% !important;
+    font-size: 5px !important; 
+  }
+}
+
 /*----------------------------------------------------*/
 /* FORM CREATE
 ------------------------------------------------------ */
@@ -194,9 +200,7 @@ a{
   align-items: center;
   justify-content: space-around;
   background-color: white;
-  position: fixed;
-  position: absolute;
-  bottom: 0;
+  margin-left: 5%;
 }
 
 #create_chan label{
