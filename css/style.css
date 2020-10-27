@@ -42,7 +42,7 @@ i.icon-black {
 @media (max-width: 380px){
   #header-logo{
     position: absolute !important;
-    margin-left: 80% !important;
+    margin-left: 75% !important;
   }
 }
 
@@ -260,6 +260,12 @@ z-index: 10000;
     transform: translate(0);
    }
  }
+
+ .banner-part2{
+  display: flex !important;
+  flex-direction:column !important;
+  align-items: center !important;
+ }
   
  .intro-text{
   z-index: 1000 !important;
@@ -292,15 +298,14 @@ z-index: 10000;
  /* text-shadow: 0px 0px 10px rgba(0,0,0,0.2);*/
   box-shadow: 0 0 20px #eee !important;
   border-radius: 50px!important;
-  margin-left: -5% !important;
   margin-top: 22.5% !important;
+  margin-left:10% !important;
   position: absolute !important;
 }
 
 /*** RESPONSIVE BANNER SECTION ***/
 @media (max-width: 1280px) {
   .button_connect{
-    margin-left: -10% !important;
     margin-top: 25% !important;
   }
 
@@ -327,14 +332,14 @@ z-index: 10000;
 
 @media (max-width: 990px) {
   .button_connect{
-    margin-left: 0!important;
+    margin-left: 30%!important;
     margin-top: 25% !important;
     padding: 15px !important;
   }
 
   .intro-text{
     font-size: 20px;
-    margin-left: 0;
+    margin-left: 30%!important;
   }
   
 
@@ -399,8 +404,12 @@ z-index: 10000;
     width: 50%;
     padding-top: 5%;
     font-size: 15px;
+    margin-left:0 !important;
   }
-
+  .button_connect{
+    margin-left: 0!important;
+    margin-top: 35% !important;
+  }
 }
 
 @media (max-width: 580px) {
@@ -516,15 +525,15 @@ z-index: 10000;
   }
 
   .habit {
-    height: 150px;
-    width: 150px;
+    height: 100px;
+    width: 100px;
     margin-left: 19%;
     margin-top: 10%;
   }
   
   .icon {
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
   }
   .banner-part2{
     display: flex;

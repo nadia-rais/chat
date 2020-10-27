@@ -108,13 +108,13 @@ session_start();
                 </h3>
             </div>
             <div class="col l3 services-description">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                <p>Un événement à organiser ?! crée un channel dédié, invite ta communauté... tiens tes amis au courant de l'organisation de l'événement. Say Hi est la façon la plus facile de discuter tous les jours et de se retrouver plus souvent.</p>
             </div>
             <div class="col l3 services-description">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                <p>L'endroit idéal pour passer du temps ensemble. Prends place dans un salon quand tu es libre. Les amis dans ton serveur peuvent voir que tu es là et immédiatement te rejoindre pour discuter de vos sujets préférés. </p>
             </div>
             <div class="col l3 services-description">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                <p>Les serveurs Say Hi sont organisés en channels. Choisissez les sujets où vous voulez collaborer, partager et simplement discuter. Vous trouverez forcément le channel qui vous convient quelques soient vos centres d'intérêt.</p>
             </div>
         </div>
     </section>  

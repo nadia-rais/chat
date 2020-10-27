@@ -27,11 +27,13 @@
     
     //var_dump($title_channel);
    ?>
+   <?php if(isset ($_SESSION['user'])){ ?>
    <nav>
         <div class="nav-wrapper chan-nav">
             <p class="brand-logo center chat-logo">BIENVENUE @ <?= $_SESSION['user']['login']; ?></p>
         </div>
     </nav>
+    <?php } ?>
 </header>
 <main  id="main-channel">
     <?php if(isset ($_SESSION['user'])){ ?>
@@ -86,8 +88,4 @@
     include("includes/footer.php") ?>
 </footer>
 </body>
-<<<<<<< HEAD
 </html>
-=======
-</html>
->>>>>>> 474be8171f24ecb32737f495f347eac830f15101
