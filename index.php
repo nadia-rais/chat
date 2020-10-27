@@ -58,7 +58,11 @@ session_start();
             </div>
             <div class="col l6 center-align banner-part2">
                 <p class="intro-text">l'appli la plus cool pour te connecter à tes proches où que tu sois !</p>
-                <a class="button_connect" href="connexion.php">connecte-toi maintenant !</a> 
+                <?php if (isset($_SESSION['user'])){ ?>
+                    <a class="button_connect" href="chat.php">rejoins le chat maintenant!</a> 
+                <?php }else{ ?>
+                    <a class="button_connect" href="connexion.php">connecte-toi maintenant !</a>
+                <?php } ?>  
             </div>
             
         </div>
